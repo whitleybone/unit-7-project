@@ -1,0 +1,12 @@
+.nav {
+ // SVG images for vertical nav bad
+    @include e(icon) {
+        fill: lightgrey;
+        height: em(45px);
+        
+        &:hover {
+            fill: $white;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.btn {
+    @include e(settings) {
+        @include flex(flex, row, $just: space-between);
+        margin-top: em(20px);
+    }
+
+    @include m(message-send) {
+        @extend %prim-bckgrnd;
+        @extend %btn;
+        width: 100%;
+    }
+
+    @include m(settings-save) {
+        @extend %prim-bckgrnd;
+        @extend %btn;
+        width: 47%;
+    }
+
+    @include m(settings-cancel) {
+        background-color: lightgray;
+        @extend %btn;
+        width: 47%;
+    }
+}
+
+
+
+
+

@@ -1,0 +1,148 @@
+.search {
+    &-container {
+        background-color: #faf8f8;
+        border-bottom: 1px solid lightgrey;
+        width: 100%;
+        @include flex(flex, $just: flex-end);
+    }
+
+    @include e(bar) {
+        width: 92%;
+        padding: em(10px) 0 em(10px) em(15px);
+        margin: em(10px) em(5px) em(10px) 0;
+        border-style: none;
+        border: 1px solid lightgrey;
+        @extend %br;
+
+        @include mq(medium) {
+            width: 40%;
+            padding-left: em(15px);
+        }
+    }    
+}
+
+.user {
+    form {
+        @include flex(flex, column);
+    }
+
+    @include e(search) {
+        margin-top: 5px;
+        @extend %input;
+    }
+
+    @include e(message) {
+        @extend %input;
+        padding-bottom: em(85px);
+        resize: none;
+    }
+}
+
+.settings {
+    @include e(timezone) {
+        width: 100% !important;
+        font-size: em(14px);
+        @extend %input;
+        padding: em(10px);
+        margin-bottom: 0;
+    }
+
+    @include e(switch) {
+        width: 90%;
+        justify-content: space-between;
+        @extend %settings-input;        
+        @include flex(flex, row, $align: center);
+
+        @include mq(medium) {
+            width: 85%;
+        }
+    }
+
+    p {
+        font-size: em(13px);
+        color: #939ca0;
+        font-weight: $font-wt-bold;
+    }
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: lightgrey;
+    font-size: em(14px);
+}
+
+// ====================================
+// ===========TOGGLE SWITCH============
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: em(95px);
+    height: em(30px);
+
+    input {
+        display: none;
+
+        &:checked  + .slider {
+            background-color: $primary-color;
+
+            &:after {
+                content:'ON';
+            }
+
+            &:before {
+               transform: translateX(60px);
+            }
+        }
+
+        &:focus + .slider {
+            box-shadow: 0 0 1px #2196f3;
+        }
+    }
+
+    .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: .4s;
+        cursor: pointer;
+        background-color: $grey;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 4px;
+            bottom: 4px;
+            height: em(22px);
+            width: em(24px);
+            background-color: $white;
+            transition: .4s;
+        }
+
+        &:after {
+            content:'OFF';
+            color: white;
+            display: block;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            font-size: em(14px);
+            font-weight: $font-wt-bold;
+        }
+    }
+}
+
+.slider.round {
+    border-radius: em(34px);
+  }
+  
+.slider.round:before {
+border-radius: 50%;
+}
+
+
+
+  

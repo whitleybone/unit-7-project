@@ -1,0 +1,87 @@
+//////////////
+///MAIN NAV///
+//////////////
+
+.nav {
+    //nav container
+    &-container {
+        background-color: $primary-color;
+        color: $white;
+        @include flex(flex, row, $just: space-between, $align: center);
+    }
+    //nav heading
+    @include e(heading) {
+        font-size: em(22px);
+        margin: em(20px) em(20px);
+
+        span {
+            font-weight: $font-wt-thin;
+        }
+    }
+    //nav ul list
+    @include e(list) {
+        padding-right: em(15px);
+        @include flex(flex, row, $align: center);
+
+        li {
+            font-size: em(14px);
+        }
+
+    }
+    //nav list items
+    @include e(item) {
+        font-size: 13px;
+        margin-left: em(10px);
+        font-weight: $font-wt-thin;
+    }
+    //notification dot
+    @include m(circle){
+        display: flex !important;
+        border-radius: 50%;
+        width: em(6px);
+        height: em(6px);
+        background-color: $pastel;
+        display: inline-block;
+        margin-top: -15px;
+        margin-left: -20px;
+    }  
+}
+
+//////////////////
+///VERTICAL NAV///
+//////////////////
+
+.nav {
+    &-vertical {
+        background-color: $secondary-color;
+        width: 100%;
+        margin: 0;
+        padding-top: em(15px);
+        padding-left: 0px;
+        @include flex(flex, row, $just: center);
+
+        @include mq(medium) {
+            @include flex(flex, column, $just: center);
+            width: em(60px); 
+        } 
+    }
+
+    //list items
+    @include e(item-vertical) {
+        padding-left: em(12px);
+
+        svg {
+            width: em(45px);
+        }
+    }
+}
+
+.nav__item-vertical:hover {
+    border-bottom: 3px solid lightgreen;
+    transition: .5s;
+    
+    @include mq(medium) {
+        border-left: 3px solid lightgreen;
+        border-bottom: none;
+    }
+}

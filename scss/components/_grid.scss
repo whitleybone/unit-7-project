@@ -1,0 +1,185 @@
+
+//flex for grids
+.grid {
+    @include mq(medium) {
+        @include e(row) {
+            @include flex(flex);
+        }
+    }
+}
+
+.dashboard-container {
+    @include flex(flex, column, $flex: 1);
+    [class^="grid__col--"] {
+        @include flex(flex, column, $flex: 1);
+    }
+}
+
+.nav-vertical {
+    @include flex(flex, row, $just: center);
+    background-color: $secondary-color; 
+    height: 100%; 
+    @include mq(medium) {
+        @include flex(flex, column, $just: flex-start);
+    }
+}
+
+.grid__col--3 ,
+.grid__col--4 ,
+.grid__col--5 ,
+.grid__col--6 ,
+.grid__col--7 {
+    padding: em(10px) em(25px) em(50px) em(25px);
+    border-top: solid 1px lightgrey;
+
+    @include mq(medium) {
+        &:first-child {
+        border-right: solid 1px lightgrey;
+        }
+    }
+}
+
+.main-container {
+    @include mq(medium) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.dashboard {
+    padding: 0 em(20px);
+    background-color: rgba(101, 97, 158,0.43);
+    width: em(145px);
+
+    @include mq(medium) {
+        border-right: 1px solid lightgrey;
+        background-color: $white;
+    }
+    
+    h2 {
+        font-size: em(20px);
+        font-weight: 400;
+        color: $white;
+
+        @include mq(medium) {
+            color: $grey;
+        }
+    }
+}
+
+.dashboard-container {
+    @include mq(medium) {
+        width: em(710px);
+    }
+
+    @include mq(large) {
+        border-right: 2px solid $primary-color;
+    }
+}
+
+
+.social {
+    &-container {
+        
+        @include mq(medium) {
+            @include flex(flex, row, $just: space-between);
+        }
+    }
+
+    &-card {
+        background-color:#f4f2f2;
+        border: 1px solid lightgrey;
+        margin: em(20px) auto;
+        border-radius: em(5px);
+        @include flex(flex, row, $just: center, $align: center);
+
+        
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        @include mq(medium) {
+            margin: em(10px) em(15px) 0 0;
+            width: 33%;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            @include mq(large) {
+                width: 50%;
+                margin: em(10px) em(20px) 0 em(20px);
+            }
+        }
+        
+        h4 {
+            color: $primary-color;
+            margin-bottom: 0px;
+            font-size: em(18px);
+        }
+
+        p {
+            color: #616161;
+            font-size: em(45px);
+            font-weight: $font-wt-thin;
+            margin-top: 0;
+            margin-bottom: em(20px);
+        }
+    }
+
+    @include e(stats) {
+        margin-left: em(20px);
+    }
+}
+
+
+
+.members {
+    @include flex(flex, row, $align: center);
+    color: #616161;
+    font-size: em(14px);
+    padding: em(20px) 0;
+    border-bottom: 1px solid lightgrey;
+
+    &:last-of-type {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    @include m(img) {
+        border-radius: 50%;
+        width: em(40px);
+    }
+
+    @include e(info) {
+        @include flex(flex, column, $flex: 2);
+        padding-left: em(10px);
+
+        p {
+            margin: 0;
+        }
+    }
+
+    @include e(name){
+        font-size: em(13px);
+    }
+
+    @include e(email) {
+        color: $primary-color;
+        font-size: em(13px);
+    }
+
+    @include e(reg) {
+        font-size: em(12px);
+    }
+
+    @include e(time) {
+        font-size: em(12px);
+    }
+
+   
+}

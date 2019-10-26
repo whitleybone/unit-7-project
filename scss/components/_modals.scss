@@ -1,0 +1,122 @@
+
+//SEND BUTTON MODAL
+.modal {
+    @extend %modal-overlay;
+
+    &-content {
+        background-color: $primary-color;        
+        border: 1px solid $secondary-color;
+        margin: 15% auto;
+        padding: em(20px);
+        width: 50%;
+        @extend %br;
+
+        p {
+            color: $white;
+            font-size: em(17px);
+        }
+    }
+}
+
+.closeModal {
+    color: $white;
+    float: right;
+    font-size: em(23px);
+    font-weight: $font-wt-bold;
+    
+    &:hover {
+        cursor: pointer;
+        color: lightgrey;
+    }
+}
+
+.overlay__notification {
+    @extend %modal-overlay;
+    color:rgba(53, 53, 53, 0.89);
+    
+
+    .verification {
+        width: 95%;
+        height: em(125px);
+        margin: 0 auto;
+        margin-top: em(20px);
+        background-color: $white;
+        @include flex(flex, row, $align: center);
+
+        @include mq(medium) {
+            width: 50%;
+        }
+
+        @include mq(large) {
+            max-width: em(1000px);
+        }
+
+        @include m(img) {
+            width: em(100px);
+            margin: 0 em(10px) 0 em(20px);
+        }
+
+        @include e(content) {
+            width: 100%;
+            @include flex(flex, $wrap: wrap);
+        
+            p {
+                width: 80%;
+                margin: 0;
+            }
+    
+            h1 {
+                width: 90%;
+                font-size: em(25px);
+                margin: 0 0 em(10px) 0;
+            }
+        }    
+        @include e(close) {
+            cursor: pointer;
+        }    
+    }
+
+    .message {
+        width: 95%;
+        height: em(125px);
+        margin: 0 auto;
+        margin-top: em(20px);
+        background-color: $white;
+        @include flex(flex, row, $align: center);
+
+        @include mq(medium) {
+            width: 50%;
+        }
+
+        @include mq(large) {
+            max-width: em(1000px);
+        }
+
+        @include m(img) {
+            width: em(80px);
+            margin: 0 em(20px) 0 em(30px);
+        }
+
+        @include e(content) {
+            width: 100%;
+            @include flex(flex, row, $wrap: wrap);
+
+            p {
+                margin: 0;
+            }
+        
+            h1 {
+                width: 90%;
+                margin: 0 0 em(10px) 0;
+                font-size: em(25px);
+            }
+        }
+
+        @include e(close) {
+            cursor: pointer;
+        }
+    }   
+}
+
+
+

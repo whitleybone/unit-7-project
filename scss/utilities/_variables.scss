@@ -1,0 +1,83 @@
+//VARIABLES
+//
+
+// ===============================================
+// =================FONTS=========================
+
+
+// FONT STACKS
+
+$font-url      :  "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700";
+$stack-roboto  :  'Roboto', sans-serif;
+
+// FONT WEIGHT
+
+$font-wt-thin        : 100;
+$font-wt-light       : 300;
+$font-wt-regular     : 400;
+$font-wt-bold        : 700;
+$font-wt-bolder      : 900;
+
+// FONT SIZE
+
+$base-font-size: 16px;
+
+// ===============================================
+// =================COLORS========================
+
+//Name that color http://chir.ag/projects/name-that-color/#E59061
+
+$white         :#FFF;
+$grey          :#808080;
+$black         :#181616;
+
+// THEME COLORS
+
+$scampi        :#65619E;  //Primary color
+$victoria      :#564483;  //Secondary color
+$pastel        :#75D799;  //notification dot color
+
+
+
+
+// BASE COLORS
+$primary-color     : $scampi;
+$secondary-color   : $victoria; 
+
+
+// PALETTES
+
+$color-palettes: (
+    grey: (
+            xx-light: lighten($grey, 45%),
+             x-light: lighten($grey, 35%),
+                base: $grey,
+              x-dark: darken($grey, 35%),
+             xx-dark: darken($grey, 45%),
+    )
+);
+
+
+// UI COLORS 
+
+
+// ===============================================
+// =================BREAKPOINTS===================
+
+$brkpoint-sm      : 1px;
+$brkpoint-md      : 768px;
+$brkpoint-lg      : 1100px;
+
+
+// ===============================================
+// =================IMG PATHS=====================
+
+$path-img   :  '../images';
+
+// ===============================================
+// =================GRID==========================
+
+$g-col-width    : 65px; 
+$g-gutter-width : 20px;  
+$g-col-count    : 12;  
+$g-cont-max-w   : 1050px; 

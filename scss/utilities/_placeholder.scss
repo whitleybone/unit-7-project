@@ -1,0 +1,89 @@
+
+
+// ===============Screen Readers======================//
+
+%srt {
+    visibility: hidden;
+}
+
+
+// =============== HELPERS ======================//
+
+//Border radius
+%br {
+    border-radius: em(5px);
+}
+
+//Centered
+%centered {
+    text-align: center;
+}
+
+//Remove underline from links
+%text-dec-none {
+    text-decoration: none;
+}
+
+//Margin auto 
+%margin-auto {
+    margin: 0 auto;
+}
+
+//Button
+%btn {
+    @extend %br;
+    border-style: none;
+    padding: em(20px); 
+    color: $white;
+    font-size: em(13px);
+    font-weight: $font-wt-bold;
+    cursor: pointer;
+}
+
+//Chart buttons
+%crt-btn {
+    font-size: 13px;
+    font-weight: $font-wt-bold;
+    margin: 0 5px;
+    border-radius: 20px;
+    padding: 5px 15px;
+    transition: .5s;
+    cursor: pointer;
+    border: none;
+    color: #939ca0;
+    background-color: $white;
+}
+
+//Input
+%input {
+    @extend %br;
+    border-style: none;
+    border: 1px solid lightgray;
+    padding: em(10px);
+    margin-bottom: 15px;
+}
+
+//Settings input
+%settings-input {
+    margin-bottom: 34px;
+    font-size: 15px;
+}
+
+//Background color - primary color 
+%prim-bckgrnd {
+    background-color: $primary-color;
+}
+
+//Modal overlay
+%modal-overlay{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); 
+}
+

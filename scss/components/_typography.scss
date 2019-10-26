@@ -1,0 +1,45 @@
+body {
+    font-family: $stack-roboto;
+    min-width: em(380px);
+    margin: 0 auto;
+}
+
+.pHeading {
+    font-size: em(13px);
+    font-weight: 600;
+    color: #939ca0;
+}
+
+.alert {
+    @extend %prim-bckgrnd;    
+    color: $white;
+    border-radius: 2px;
+    margin: em(20px);
+    font-size: 13px;
+
+    span {
+        font-weight: $font-wt-bold;
+        font-size: 14px;
+        margin-right: em(10px);
+
+        @include mq(large) {
+            margin-right: 0;
+        }
+    }
+
+    ul {
+        @include flex(flex, row, $just: space-between, $align: center);
+        padding: 0 em(15px);
+        font-weight: 100;
+        font-size: em(12px);
+        
+    }
+
+    &-close {
+        position: relative;
+        font-weight: $font-wt-bold;
+        font-size: 18px;
+        margin-left: em(5px);
+        cursor: pointer;
+    }
+}
